@@ -1,3 +1,7 @@
+# Custom additions
+
+1. Run `vue-codemod **/*.vue -t custom-remove-shared-components-imports` inside the `src/` folder
+
 # vue-codemod
 
 > ⚠️Attention: This repo is forked from [https://github.com/vuejs/vue-codemod](https://github.com/vuejs/vue-codemod).
