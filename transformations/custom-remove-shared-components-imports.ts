@@ -13,12 +13,12 @@ export const transformAST: ASTTransformation = ({ j, root, filename }) => {
     })
     .remove()
 
-  const options = getVueOptions({ j, root, filename })
-  const result = options.toSource({ lineTerminator: '\n' })
+  // const options = getVueOptions({ j, root, filename })
+  // const result = options.toSource({ lineTerminator: '\n' })
 
-  if (Array.isArray(result)) {
-    return result.map((source, index) => `${index}: ${source}`).join('\n\n')
-  }
+  // if (Array.isArray(result)) {
+  //   return result.map((source, index) => `${index}: ${source}`).join('\n\n')
+  // }
   console.log('result:', result)
 
   // TODO: use components shim as source.value
