@@ -5,10 +5,12 @@ import { getVueOptions } from '../src/astUtils'
 export const transformAST: ASTTransformation = ({ j, root, filename }) => {
   root
     .find(j.ImportDeclaration)
-    .filter(
-      path =>
-        path.node.source.value === '@/shared/components/SiInput/SiInput.vue'
-    )
+    .filter(path => {
+      if (typeof path?.node?.source?.value === 'string') {
+        return path.node.source.value.includes('/shared/components/')
+      }
+      return false
+    })
     .remove()
 
   const options = getVueOptions({ j, root, filename })
